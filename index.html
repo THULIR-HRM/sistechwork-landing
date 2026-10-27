@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Interview Registration | Sistechwork</title>
+    <meta name="description" content="Register for job interview opportunities with Sistechwork. Precision engineering and enterprise platforms.">
+    <link rel="icon" type="image/png" href="./assets/images/favicon.webp">
+    <link rel="shortcut icon" href="./assets/images/favicon.webp">
+    <link rel="apple-touch-icon" href="./assets/images/favicon.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=5">
+</head>
+<body>
+
+<!-- ==========================================================================
+     EXACT SISTECHWORK ORIGINAL HEADER
+     ========================================================================== -->
+<header class="site-header" id="site-header">
+    <nav class="nav-container" id="nav-container" aria-label="Main Navigation">
+        <a href="#hero" class="logo-link" aria-label="Sistechwork Home">
+            <img src="./assets/images/logo.webp" alt="Sistechwork">
+        </a>
+        <div class="primary-menu" role="navigation">
+            <ul class="nav-list">
+                <li><a href="#platforms" class="nav-link">Platforms</a></li>
+                <li><a href="#products" class="nav-link">Products</a></li>
+                <li><a href="#engineering" class="nav-link">Engineering</a></li>
+                <li><a href="#techstack" class="nav-link">Tech Stack</a></li>
+                <li><a href="#workflow" class="nav-link">Workflow</a></li>
+                <li><a href="#careers" class="nav-link active">Careers</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+        <div class="header-actions">
+            <a href="#registrationForm" class="btn btn-primary btn-sm" id="nav-cta">Get Started</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMobileMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<!-- Mobile Navigation Overlay -->
+<div class="mobile-menu" id="mobile-menu" style="display:none;" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <ul>
+        <li><a href="#platforms" onclick="toggleMobileMenu()">Platforms</a></li>
+        <li><a href="#products" onclick="toggleMobileMenu()">Products</a></li>
+        <li><a href="#engineering" onclick="toggleMobileMenu()">Engineering</a></li>
+        <li><a href="#techstack" onclick="toggleMobileMenu()">Tech Stack</a></li>
+        <li><a href="#workflow" onclick="toggleMobileMenu()">Workflow</a></li>
+        <li><a href="#careers" onclick="toggleMobileMenu()">Careers</a></li>
+        <li><a href="#contact" onclick="toggleMobileMenu()">Contact</a></li>
+        <li><a href="#registrationForm" class="mobile-cta" onclick="toggleMobileMenu()">Get Started</a></li>
+    </ul>
+</div>
+
+<!-- ==========================================================================
+     HERO & REGISTRATION PAGE CONTENT
+     ========================================================================== -->
+<main class="page-main-wrap" id="hero">
+    
+    <!-- Hero Heading Section -->
+    <section class="form-hero-section">
+        <div class="hero-status-pill">
+            <span class="status-pulse-dot"></span>
+            <span>Sistechwork Core v3.4 • Production-Grade Systems Active</span>
+        </div>
+        <h1 class="page-title">Job Interview Registration</h1>
+        <p class="page-subtitle">Please fill in all the required details accurately to register for job interview opportunities.</p>
+    </section>
+
+    <!-- Large White Registration Form Card -->
+    <div class="form-card-container">
+        
+        <!-- The Registration Form -->
+        <form id="registrationForm" class="registration-form" novalidate autocomplete="on">
+            
+            <!-- SECTION 1: PERSONAL INFORMATION -->
+            <div class="form-section-block" id="section-personal">
+                <div class="section-title-bar">
+                    <div class="section-icon-box" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <div class="section-text-wrap">
+                        <h2 class="section-heading">Personal Information</h2>
+                        <p class="section-subtext">Provide your contact details and identity information.</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <!-- 1. Full Name -->
+                    <div class="form-group col-span-2">
+                        <label for="fullName" class="form-label">
+                            Full Name <span class="required-star">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="fullName" 
+                            name="fullName" 
+                            class="form-input" 
+                            placeholder="e.g. Alex Jennifer" 
+                            required 
+                            autocomplete="name"
+                        >
+                        <span class="field-error-message" id="fullNameError" role="alert"></span>
+                    </div>
+
+                    <!-- 2. Email ID -->
+                    <div class="form-group">
+                        <label for="email" class="form-label">
+                            Email ID <span class="required-star">*</span>
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            class="form-input" 
+                            placeholder="e.g. alex@example.com" 
+                            required 
+                            autocomplete="email"
+                        >
+                        <span class="field-error-message" id="emailError" role="alert"></span>
+                    </div>
+
+                    <!-- 3. Contact Number -->
+                    <div class="form-group">
+                        <label for="contactNumber" class="form-label">
+                            Contact Number <span class="required-star">*</span>
+                        </label>
+                        <input 
+                            type="tel" 
+                            id="contactNumber" 
+                            name="contactNumber" 
+                            class="form-input" 
+                            placeholder="e.g. 9876543210" 
+                            required 
+                            maxlength="15" 
+                            autocomplete="tel"
+                        >
+                        <span class="field-error-message" id="contactNumberError" role="alert"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: EDUCATIONAL INFORMATION -->
+            <div class="form-section-block" id="section-educational">
+                <div class="section-title-bar">
+                    <div class="section-icon-box" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                        </svg>
+                    </div>
+                    <div class="section-text-wrap">
+                        <h2 class="section-heading">Educational Information</h2>
+                        <p class="section-subtext">Provide your academic qualifications, scores, and institutional details.</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <!-- 4. College Name -->
+                    <div class="form-group col-span-2">
+                        <label for="collegeName" class="form-label">
+                            College Name <span class="required-star">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="collegeName" 
+                            name="collegeName" 
+                            class="form-input" 
+                            placeholder="e.g. Anna University / Madras Institute of Technology" 
+                            required
+                        >
+                        <span class="field-error-message" id="collegeNameError" role="alert"></span>
+                    </div>
+
+                    <!-- 5. Degree -->
+                    <div class="form-group">
+                        <label for="degree" class="form-label">
+                            Degree <span class="required-star">*</span>
+                        </label>
+                        <select id="degree" name="degree" class="form-input form-select" required>
+                            <option value="" disabled selected>Select your degree</option>
+                        </select>
+                        <span class="field-error-message" id="degreeError" role="alert"></span>
+
+                        <!-- Conditional 'Other' input for Degree -->
+                        <div id="degreeOtherGroup" class="conditional-field-group hidden">
+                            <label for="degreeOther" class="form-label">
+                                Please specify your Degree <span class="required-star">*</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                id="degreeOther" 
+                                name="degreeOther" 
+                                class="form-input" 
+                                placeholder="Enter degree name"
+                            >
+                            <span class="field-error-message" id="degreeOtherError" role="alert"></span>
+                        </div>
+                    </div>
+
+                    <!-- 6. Department -->
+                    <div class="form-group">
+                        <label for="department" class="form-label">
+                            Department <span class="required-star">*</span>
+                        </label>
+                        <select id="department" name="department" class="form-input form-select" required>
+                            <option value="" disabled selected>Select your department</option>
+                        </select>
+                        <span class="field-error-message" id="departmentError" role="alert"></span>
+
+                        <!-- Conditional 'Other' input for Department -->
+                        <div id="departmentOtherGroup" class="conditional-field-group hidden">
+                            <label for="departmentOther" class="form-label">
+                                Please specify your Department <span class="required-star">*</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                id="departmentOther" 
+                                name="departmentOther" 
+                                class="form-input" 
+                                placeholder="Enter department name"
+                            >
+                            <span class="field-error-message" id="departmentOtherError" role="alert"></span>
+                        </div>
+                    </div>
+
+                    <!-- 7. Location -->
+                    <div class="form-group col-span-2">
+                        <label for="location" class="form-label">
+                            Location <span class="required-star">*</span>
+                            <span class="field-hint">(Current City / State)</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="location" 
+                            name="location" 
+                            class="form-input" 
+                            placeholder="e.g. Chennai, Tamil Nadu" 
+                            required
+                        >
+                        <span class="field-error-message" id="locationError" role="alert"></span>
+                    </div>
+
+                    <!-- 8. Year of Passing (2025, 2026, 2027, 2028, 2029) -->
+                    <div class="form-group col-span-2">
+                        <label for="passingYear" class="form-label">
+                            Year of Passing <span class="required-star">*</span>
+                        </label>
+                        <select id="passingYear" name="passingYear" class="form-input form-select" required>
+                            <option value="" disabled selected>Select graduation year</option>
+                        </select>
+                        <span class="field-error-message" id="passingYearError" role="alert"></span>
+                    </div>
+
+                    <!-- 9. CGPA / Percentage -->
+                    <div class="form-group">
+                        <label for="gradingType" class="form-label">
+                            Grading Type <span class="required-star">*</span>
+                        </label>
+                        <select id="gradingType" name="gradingType" class="form-input form-select" required>
+                            <option value="CGPA" selected>CGPA (Scale 0 - 10)</option>
+                            <option value="Percentage">Percentage (Scale 0 - 100%)</option>
+                        </select>
+                        <span class="field-error-message" id="gradingTypeError" role="alert"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cgpaOrPercentage" class="form-label">
+                            CGPA / Percentage Score <span class="required-star">*</span>
+                            <span class="field-hint" id="cgpaHint">Scale: 0.00 to 10.00 (e.g., 8.65)</span>
+                        </label>
+                        <input 
+                            type="number" 
+                            id="cgpaOrPercentage" 
+                            name="cgpaOrPercentage" 
+                            class="form-input" 
+                            placeholder="Enter CGPA (e.g. 8.65)" 
+                            step="0.01" 
+                            min="0" 
+                            max="10" 
+                            required
+                        >
+                        <span class="field-error-message" id="cgpaOrPercentageError" role="alert"></span>
+                    </div>
+
+                    <!-- 10. 12th Standard Percentage -->
+                    <div class="form-group">
+                        <label for="twelfthPercentage" class="form-label">
+                            12th Standard Percentage <span class="required-star">*</span>
+                            <span class="field-hint">(0 - 100%)</span>
+                        </label>
+                        <input 
+                            type="number" 
+                            id="twelfthPercentage" 
+                            name="twelfthPercentage" 
+                            class="form-input" 
+                            placeholder="e.g. 88.5" 
+                            step="0.01" 
+                            min="0" 
+                            max="100" 
+                            required
+                        >
+                        <span class="field-error-message" id="twelfthPercentageError" role="alert"></span>
+                    </div>
+
+                    <!-- 11. 10th Standard Percentage -->
+                    <div class="form-group">
+                        <label for="tenthPercentage" class="form-label">
+                            10th Standard Percentage <span class="required-star">*</span>
+                            <span class="field-hint">(0 - 100%)</span>
+                        </label>
+                        <input 
+                            type="number" 
+                            id="tenthPercentage" 
+                            name="tenthPercentage" 
+                            class="form-input" 
+                            placeholder="e.g. 92.0" 
+                            step="0.01" 
+                            min="0" 
+                            max="100" 
+                            required
+                        >
+                        <span class="field-error-message" id="tenthPercentageError" role="alert"></span>
+                    </div>
+
+                    <!-- 12. Number of Arrears -->
+                    <div class="form-group col-span-2">
+                        <label for="arrears" class="form-label">
+                            Number of Arrears <span class="required-star">*</span>
+                            <span class="field-hint">(Current active standing arrears)</span>
+                        </label>
+                        <select id="arrears" name="arrears" class="form-input form-select" required>
+                            <option value="" disabled selected>Select standing arrears count</option>
+                        </select>
+                        <span class="field-error-message" id="arrearsError" role="alert"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: PREFERRED JOB ROLE -->
+            <div class="form-section-block" id="section-roles">
+                <div class="section-title-bar">
+                    <div class="section-icon-box" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                    </div>
+                    <div class="section-text-wrap">
+                        <h2 class="section-heading">
+                            Role Preferred <span class="required-star">*</span>
+                        </h2>
+                        <p class="section-subtext">You may select multiple roles that match your career goals. At least one role is required.</p>
+                    </div>
+                </div>
+
+                <!-- 13. Three Checkbox Cards -->
+                <div class="roles-grid" id="jobRolesContainer">
+                    <!-- Populated dynamically via config.js -->
+                </div>
+                <div class="field-error-message" id="preferredRolesError" role="alert" style="margin-top: 0.85rem;"></div>
+            </div>
+
+            <!-- SUBMISSION SECTION & BOTTOM CENTER BUTTON -->
+            <div class="form-footer-action-area">
+                <div id="formStatusNotice" class="status-notice notice-pending">
+                    <svg class="notice-icon" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Please complete all required fields marked with <strong class="text-danger">*</strong> to activate the submit button.</span>
+                </div>
+
+                <div class="submit-button-center-wrapper">
+                    <button 
+                        type="submit" 
+                        id="submitBtn" 
+                        class="btn btn-primary btn-submit btn-disabled" 
+                        disabled 
+                        aria-disabled="true"
+                    >
+                        <span id="submitBtnText">Submit Registration</span>
+                        <svg id="submitBtnSpinner" class="spinner-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
+                            <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"></path>
+                        </svg>
+                    </button>
+                    <p class="submit-security-note">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        <span>Candidate records are securely processed through encrypted channels.</span>
+                    </p>
+                </div>
+            </div>
+
+        </form>
+
+        <!-- Google Forms Style Confirmation Screen (displayed after successful submission) -->
+        <div id="confirmationScreen" class="confirmation-card hidden" role="region" aria-live="polite">
+            <div class="confirmation-icon-wrap" aria-hidden="true">
+                <svg class="confirmation-check-svg" viewBox="0 0 52 52" fill="none">
+                    <circle cx="26" cy="26" r="24" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+                    <path d="M16 26.5L23 33.5L36 19.5" stroke="#10B981" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h2 class="confirmation-title">Thank you!</h2>
+            <p class="confirmation-message-lead">Your details have been submitted successfully.</p>
+            <p class="confirmation-message-sub">Thank you for your interest. We have received your registration details.</p>
+        </div>
+    </div>
+</main>
+
+<!-- ==========================================================================
+     RESPONSE & VERIFICATION MODAL
+     ========================================================================== -->
+<div id="responseModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+        <div id="modalIcon" class="modal-icon-badge"></div>
+        <h3 id="modalTitle" class="modal-title">Registration Status</h3>
+        <div id="modalMessage"></div>
+
+        <!-- Preview of submitted payload data -->
+        <div id="modalDataPreview" class="modal-preview-card hidden">
+            <div class="modal-preview-title">Submitted Profile Snapshot</div>
+            <div id="modalDataList"></div>
+        </div>
+
+        <button type="button" id="modalCloseBtn" class="btn btn-primary btn-modal-close">Done</button>
+    </div>
+</div>
+
+<!-- ==========================================================================
+     EXACT SISTECHWORK ORIGINAL FOOTER
+     ========================================================================== -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="./assets/images/logo_white.webp" alt="Sistechwork" class="footer-logo">
+                <p class="footer-brand-desc">Precision software engineering and enterprise platforms built for the modern digital economy.</p>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Platforms</div>
+                <ul>
+                    <li><a href="#products">Thulir HRM</a></li>
+                    <li><a href="#products">TestOrbit</a></li>
+                    <li><a href="#products">TrainHub</a></li>
+                    <li><a href="#products">Reply IQ</a></li>
+                    <li><a href="#products">Products Catalog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Engineering</div>
+                <ul>
+                    <li><a href="#services">Custom Web Systems</a></li>
+                    <li><a href="#services">Mobile Applications</a></li>
+                    <li><a href="#services">Cloud &amp; DevOps</a></li>
+                    <li><a href="#services">AI Chatbots &amp; RAG</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Company</div>
+                <ul>
+                    <li><a href="#workflow">Why Sistechwork</a></li>
+                    <li><a href="#workflow">Our Workflow</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Connect</div>
+                <ul>
+                    <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                    <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                    <li>
+                        <a href="#" class="status-indicator-link">
+                            <span class="status-dot"></span>
+                            <span>Status: Operational</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr class="footer-divider">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sistechwork Private Limited. All Rights Reserved.</p>
+            <p>Engineered with Precision &amp; Passion.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+(function () {
+    'use strict';
+
+    var menu = document.getElementById('mobile-menu');
+    var btn  = document.getElementById('hamburger');
+
+    function openMenu() {
+        if (!menu || !btn) return;
+        menu.style.display = 'flex';
+        // Allow display:flex to paint before adding class for transition
+        requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+                menu.classList.add('open');
+            });
+        });
+        btn.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+        // Move focus to first link inside menu for accessibility
+        var firstLink = menu.querySelector('a');
+        if (firstLink) { setTimeout(function () { firstLink.focus(); }, 100); }
+    }
+
+    function closeMenu() {
+        if (!menu || !btn) return;
+        menu.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        // Wait for transition to finish before hiding
+        setTimeout(function () {
+            if (!menu.classList.contains('open')) {
+                menu.style.display = 'none';
+            }
+        }, 300);
+        btn.focus();
+    }
+
+    window.toggleMobileMenu = function () {
+        if (menu && menu.classList.contains('open')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    };
+
+    // Close on Escape key
+    document.addEventListener('keydown', function (e) {
+        if ((e.key === 'Escape' || e.keyCode === 27) && menu && menu.classList.contains('open')) {
+            closeMenu();
+        }
+    });
+
+    // Close when clicking outside the menu (on the backdrop)
+    if (menu) {
+        menu.addEventListener('click', function (e) {
+            if (e.target === menu) { closeMenu(); }
+        });
+    }
+
+    // Close menu when any nav link is clicked (already handled by onclick on <a> tags)
+    // Also close on window resize if screen becomes wide enough
+    window.addEventListener('resize', function () {
+        if (window.innerWidth > 960 && menu && menu.classList.contains('open')) {
+            closeMenu();
+        }
+    });
+}());
+</script>
+<script src="config.js?v=3"></script>
+<script src="submission.js?v=3"></script>
+<script src="app.js?v=3"></script>
+</body>
+</html>
